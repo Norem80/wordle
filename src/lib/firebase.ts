@@ -24,14 +24,6 @@ export interface WordModel {
   word: string;
 }
 
-export async function getMessage() {
-  const wordsCollection = collection(db, 'test');
-  const wordsSnapshot = await getDocs(wordsCollection);
-  const wordsList = wordsSnapshot.docs.map((doc) => doc.data());
-
-  return wordsList;
-}
-
 export async function getRandomWord() {
   const wordsCollection = collection(db, 'words');
   const countSnapshot = await getCount(wordsCollection);
