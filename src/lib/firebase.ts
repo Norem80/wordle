@@ -9,7 +9,6 @@ import {
   query,
   where
 } from 'firebase/firestore/lite';
-import { describe } from 'vitest';
 
 const firebaseConfig = {
   apiKey: import.meta.env.VITE_API_KEY,
@@ -56,7 +55,7 @@ export async function isValidWord(word: string) {
 }
 
 if (import.meta.vitest) {
-  const { it, expect } = import.meta.vitest;
+  const { it, expect, describe } = import.meta.vitest;
 
   const randomWord = await getRandomWord();
 
