@@ -1,18 +1,14 @@
 import './app.css';
-import { useEffect, useState } from 'preact/hooks';
-import { getRandomWord } from './lib/firebase';
+import { Board } from './components/board';
+import { Header } from './components/header';
+import { Keyboard } from './components/keyboard';
 
 export function App() {
-  const [message, setMessage] = useState('Hello from Vite');
-
-  useEffect(() => {
-    async function fetchData() {
-      const data = await getRandomWord();
-      setMessage(data);
-    }
-
-    fetchData();
-  }, []);
-
-  return <h1>{message}</h1>;
+  return (
+    <>
+      <Header />
+      <Board />
+      <Keyboard />
+    </>
+  );
 }
